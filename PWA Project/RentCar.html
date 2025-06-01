@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent a Car</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#2d89ef" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffb2b2;
+      color: #830b0b;
+    }
+
+    header {
+      background: #0c1218;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    main {
+      padding: 1em;
+    }
+
+    .car {
+      background: white;
+      padding: 1em;
+      margin: 1em 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #2d89ef;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1b5cbd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rent a Car</h1>
+  </header>
+
+  <main>
+    <section id="car-list">
+      <h2>Available Cars</h2>
+      <div class="car">
+        <h3>Mercedes CLS</h3>
+        <img src="2017-mercedes-benz-cls-class-amg-63-sedan-angular-front.png" alt="Mercedes AMG" width="150" height="auto">
+
+
+        <p>$1000/day</p>
+        <button onclick="rentCar('Sedan')">Rent Now</button>
+      </div>
+      <div class="car">
+        <h3>NS1</h3>
+        <img src="OIP.jpg" alt="Image" style="width: 150px; height: auto;">
+ 
+        <p>$50/day</p>
+        <button onclick="rentCar('Sedan')">Rent Now</button>
+      </div>
+      <div class="car">
+        <h3>Mercedes E200</h3>
+        <img src="OIP (1).jpg" alt="Image" style="width: 150px; height: auto;">
+
+        <p>$60/day</p>
+        <button onclick="rentCar('Sedan')">Rent Now</button>
+      </div>
+      <div class="car">
+        <h3>BMW X6</h3>
+        <img src="R.jpg" alt="R Image" style="width: 150px; height: auto;">
+
+        <p>$90/day</p>
+        <button onclick="rentCar('Sedan')">Rent Now</button>
+      </div>
+      
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RentCar Inc.</p>
+  </footer>
+
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registered!', reg))
+        .catch(err => console.error('SW registration failed:', err));
+    }
+
+    function rentCar(model) {
+      alert(`You have rented a ${model}. Thank you!`);
+    }
+  </script>
+</body>
+</html>
